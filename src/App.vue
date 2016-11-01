@@ -15,7 +15,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss'>
+@font-face {
+  font-family: 'zcool';
+  src: url('../static/jianti.ttf') format('truetype');
+}
 #app {
 /*  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
