@@ -1,2 +1,4 @@
 build/*.js
 config/*.js
+src/components/ccnubox.vue
+src/components/addoil.vue

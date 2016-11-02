@@ -4,13 +4,14 @@
 	<div class="gotext" @click="go" v-if="!show"></div>
 	<div class="bg-grey" v-if="show">
 		<div class="intro">
+      <div class="intro_man"><img src="../images/runningman.gif"></div>
       <div class="intro_info">
         <p>此技术由木犀团队</p>
-        <a>www.muxistudio.com</a>
+        <a href="http://muxistudio.com">www.muxistudio.com</a>
         <p>全面提供</p>
         <p>想要享受更多的华师便利？</p>
         <p>点击下载华师匣子</p>
-        <a>ccnubox.muxixyz.com</a>
+        <a href="http://ccnubox.muxixyz.com">ccnubox.muxixyz.com</a>
         <p>从成为匣客开始</p>
       </div>
     </div>
@@ -27,6 +28,7 @@ export default {
   methods: {
     go() {
       this.show = true;
+      this.$emit('go');
     },
   },
 };
@@ -36,7 +38,9 @@ export default {
 .page{
   height: 100%;
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .bg-grey{
 	height: 100%;
@@ -54,9 +58,21 @@ export default {
 	background: url('../sprite/sprite.png') no-repeat;
   @include _sprite($addoil,305px);
 }
+.intro_man{
+  position: absolute;
+  top: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 15%;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
 .gotext{
-  width: 50%;
-  height: 20%;
+  width: 100%;
+  height: 22%;
 	position: absolute;
 	left: 50%;
 	top:50%;
@@ -84,28 +100,32 @@ export default {
     }
 }
 .intro{
-	animation: move 4s forwards; 
-	position: absolute;
-  width: 300px;
-  height: 40%;
-	left: 50%;
-	top:-50%;
-	transform: translate(-50%,-50%);
-	@include _sprite($intro,1358px);
-	border-radius: 10px;
-	z-index: 40;
+	animation: move 2s forwards; 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+	@include _sprite($intro,2208px);
 }
 .intro_info{
   line-height: 20px;
   font-family:zcool;
   letter-spacing: 2px;
   text-align: center;
-
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top:60%;
+  transform: translate(-50%,-50%);
   p{
     color:#2072b8;
+    margin:0;
   }
   a{
     color: #ff7200;
+    text-decoration: none;
   }
 }
 @keyframes move {
